@@ -12,7 +12,7 @@ class MovieGrabberTest < Test::Unit::TestCase
   end
 
   def test_get_film_info_method
-    Movie.get_film_info("jaws")
+    Movie.get_film_info("jaws") #don't change 
 
     # Don't forget to create your movies table first, using sqlite3...
     movies = @@db.execute("select * from movies")
@@ -25,3 +25,5 @@ class MovieGrabberTest < Test::Unit::TestCase
     @@db.close
   end
 end
+
+PULL THIS NEW FILE 
