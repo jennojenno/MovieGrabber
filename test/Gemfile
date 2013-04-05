@@ -1,8 +1,11 @@
 source 'http://rubygems.org'
 
 gem 'sinatra'
-gem 'rack-flash3'
+gem 'sinatra-contrib'
+gem 'rack-flash'
 gem 'pry'
+gem 'rack-test'
 gem 'httparty'
+
 
 #to use this, in terminal in the correct folder, type 'bundle'

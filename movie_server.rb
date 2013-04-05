@@ -1,25 +1,33 @@
 require 'sinatra'
-require 'rack-flash3'
+require 'rack-flash'
 require 'pry'
+
+enable :sessions
+use Rack::Flash
+
 
 require_relative 'movies'
 
 
 before '/' do 
-	unless params[:password] == "coolbeans"
-		flash[:notice] = "Sorry, wrong password"
+	# unless params[:password] == "coolbeans"
+	# 	flash[:notice] = "Sorry, wrong password"
 		redirect '/login'
-	end
+	# end
 end
 
 
 get '/' do
-  erb :index
+  erb :login
 end
 
 
 post '/login' do
-  erb :index
+	unless params[:password] == "coolbeans"
+		flash[:notice] = "Sorry, wrong password"
+		redirect '/login'
+	else erb :index
+	end
 end
 
 post '/film' do
@@ -31,6 +39,11 @@ post '/film' do
 
   erb :film, :locals => {:film => movie}
 
+  # if params[:name].nil? or params[:name] == ""
+  # 	redirect '/'
+  # end
+  # the above if is for testing an empty movie field 
+
 
 end
 
@@ -38,12 +51,3 @@ get '/login' do
   erb :login
 end
 
-# get '/output' do
-
-# 	#film = params[:film]
-# 	raise movie.inspect
-# 	erb :output, :locals => {:film => movie}
-
-# 	#binding.pry
-
-# end
