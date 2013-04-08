@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'sinatra'
 gem 'sinatra-contrib'
-gem 'rack-flash'
+gem 'rack-flash3'
 gem 'pry'
 gem 'rack-test'
 gem 'httparty'

@@ -15,7 +15,8 @@ GEM
       method_source (~> 0.8)
       slop (~> 3.4)
     rack (1.5.2)
-    rack-flash (0.1.2)
+    rack-flash3 (1.0.3)
+      rack
       rack
     rack-protection (1.5.0)
       rack
@@ -41,7 +42,7 @@ PLATFORMS
 DEPENDENCIES
   httparty
   pry
-  rack-flash
+  rack-flash3
   rack-test
   sinatra
   sinatra-contrib

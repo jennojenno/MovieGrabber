@@ -18,8 +18,8 @@ class MovieServerTest < Test::Unit::TestCase
 	def test_welcome_page
 		get '/' 
 		follow_redirect!
-		#assert last_response.ok? #does this page actually work (not 404)? 
-		assert_equal last_request.path '/login'
+		assert last_response.ok? #does this page actually work (not 404)? 
+		#assert_equal last_request.path '/login'
 		#similar would be assert last_response.code == 200 
 
 	end 
